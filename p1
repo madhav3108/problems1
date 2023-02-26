@@ -1,15 +1,49 @@
 import java.util.Scanner;
 
-public class celsiustofar {
-
+class calculator {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
 
-        System.out.print("Enter temperature in Celsius: ");
-        float C = in.nextFloat();
+        char operator;
+        Double number1, number2, result;
 
-        float F = C * (9f / 5) + 32;
+        Scanner input = new Scanner(System.in);
 
-        System.out.println(C + " degree Celsius is equal to " + F + " degree Fahrenheit.");
+        System.out.println("Choose an operator: +, -, *, or /");
+        operator = input.next().charAt(0);
+
+        System.out.println("Enter first number");
+        number1 = input.nextDouble();
+
+        System.out.println("Enter second number");
+        number2 = input.nextDouble();
+
+        switch (operator) {
+
+            case '+':
+                result = number1 + number2;
+                System.out.println(number1 + " + " + number2 + " = " + result);
+                break;
+
+            case '-':
+                result = number1 - number2;
+                System.out.println(number1 + " - " + number2 + " = " + result);
+                break;
+
+            case '*':
+                result = number1 * number2;
+                System.out.println(number1 + " * " + number2 + " = " + result);
+                break;
+
+            case '/':
+                result = number1 / number2;
+                System.out.println(number1 + " / " + number2 + " = " + result);
+                break;
+
+            default:
+                System.out.println("Invalid operator!");
+                break;
+        }
+
+        input.close();
     }
 }
